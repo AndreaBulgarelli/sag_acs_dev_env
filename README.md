@@ -41,9 +41,14 @@ Let's clone the repositories inside the "Repos" folder:
 ## How to use the environment
 
 Everytime you enter the container you need to:
-* Load INTROOT and CDB with:
+* Load INTROOT:
 ```bash
-source scripts/load_introot.sh /shared_dir
+source scripts/load_introot.sh INTROOT_PATH INTROOT_NAME
 ```
+* Load CDB:
+```bash
+source scripts/load_cdb.sh CDB_PATH
+```
+You also write your own script such as scripts/sag_env.sh
 * Enable ssh authentication if you want to use git
 
