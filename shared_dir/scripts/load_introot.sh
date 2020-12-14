@@ -1,11 +1,13 @@
 #!/bin/bash 
 
-if [ $# -eq 0 ]
+if [ $# -ne 2 ]
   then
-    echo "No arguments supplied. Please, enter the absolute INTROOT prefix"
-  else
+   printf "Usage: \n source load_introot.sh INTROOT_PREFIX INTROOT_NAME"
+   else 
+   INTROOT_PREFIX=${1}
+   INTROOT_NAME=${2}
 
-   INTROOT="$1/ACS_ACADA_INTROOT"
+   INTROOT="$INTROOT_PREFIX/$INTROOT_NAME"
 
    if [ ! -d $INTROOT ]; then
       mkdir $INTROOT
@@ -18,12 +20,12 @@ if [ $# -eq 0 ]
    export INTROOT="$INTROOT"
    source /alma/ACS-2020AUG/ACSSW/config/.acs/.bash_profile.acs
 
-   export ACS_CDB="/shared_dir/Repos/sag-supervisor/sag_supervisor"
 
    echo "
-   Environment loaded:
+   Environment:
       INTROOT is $INTROOT
       ACS_CDB is $ACS_CDB
    "
+
 fi
 
