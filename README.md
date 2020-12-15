@@ -7,6 +7,10 @@ This repository contains
 ## Requirements
 * Docker 
 
+## Tested on
+* Ubuntu 18.04
+* Docker 19.03.6
+
 ## First setup
 
 You need to build the custom image (you can change the tag inside build.sh):
